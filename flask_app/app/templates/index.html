@@ -1,0 +1,30 @@
+{%extends "template.html" %} 
+
+{%block content%} 
+  
+    
+    <div class="container p-9 mx-auto grid grid-cols-1 md:grid-cols-3 gap-9 place-items-center">
+
+        <a href="{{ url_for('main.payment') }}">
+        <button
+        class="select-none rounded-lg bg-gradient-to-tr from-emerald-800 to-emerald-600 py-3 px-6 text-center align-middle font-mono text-l font-bold uppercase text-white shadow-md shadow-emerald-800/10 transition-all hover:shadow-lg hover:shadow-emerald-800/20 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none w-48 h-20"
+        type="button">
+        PAIEMENT
+      </button> 
+      </a>
+      <button
+        class="select-none rounded-lg bg-gradient-to-tr from-emerald-800 to-emerald-600 py-3 px-6 text-center align-middle font-mono text-l font-bold uppercase text-white shadow-md shadow-emerald-800/10 transition-all hover:shadow-lg hover:shadow-emerald-800/20 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none  w-48 h-20"
+        type="button">
+        CHECK-IN
+      </button>
+
+      <a href="https://airtable.com/appRERZ3d4pcnpEDF/tblrbCxsaL2Hon69p/viwCqvzhBcCTr1qOw?blocks=hide" target="_blank">
+      <button
+        class="select-none rounded-lg bg-gradient-to-tr from-emerald-800 to-emerald-600 py-3 px-6 text-center align-middle font-mono text-l font-bold uppercase text-white shadow-md shadow-emerald-800/10 transition-all hover:shadow-lg hover:shadow-emerald-800/20 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none  w-48 h-20"
+        type="button">
+        DATA
+      </button>
+    </a>
+    </div> 
+{% endblock %}  
+

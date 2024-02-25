@@ -1,0 +1,43 @@
+{%extends "template.html" %} 
+
+{%block content%} 
+    <div class="container p-7 mx-auto  place-items-center">
+        
+
+        <form action="{{ url_for('main.send_payment')}}" method="post" class="max-w-sm mx-auto">
+            <div class="mb-5">
+                <label for="client" class="block mb-2 text-sm font-mono font-black text-brown-900 dark:text-black">Client</label>
+                <select type="text" name="client" id="client" class="shadow-sm bg-brown-50 border border-emerald-600 text-brown-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-brown-700 dark:border-brown-600 dark:placeholder-brown-400 dark:text-black dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" placeholder="Tarik Alaoui" required>
+                    <option value="" disabled selected>Choisissez le client</option>
+                    {% for client_id, value in data.clients.items() %}
+                    <option id= "{{client_id}}">{{value}}</option>"
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="mb-5">
+                <label for="date" class="block mb-2 text-sm font-mono font-black text-brown-900 dark:text-black">Date</label>
+                <input type="date" name="date" id="date" class="shadow-sm bg-brown-50 border border-emerald-600 text-brown-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-brown-700 dark:border-brown-600 dark:placeholder-brown-400 dark:text-black dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" value="{{ data.current_date }}" required>
+            </div>
+            <div class="mb-5">
+                <label for="num-res" class="block mb-2 text-sm font-mono font-black text-brown-900 dark:text-black">Num de reservation</label>
+                <select type="text" name="num-res" id="num-res" class="shadow-sm bg-brown-50 border border-emerald-600 text-brown-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-brown-700 dark:border-brown-600 dark:placeholder-brown-400 dark:text-black dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" required> 
+                    <option value="" disabled selected>Choisissez num reservation</option>
+                    {% for booking_id in data.bookings %}
+                    <option id= "{{booking_id}}">{{booking_id}}</option>"
+                    {% endfor %}
+
+                </select>
+            </div>
+            <div class="mb-5">
+                <label for="montant" class="block mb-2 text-sm font-mono font-black text-brown-900 dark:text-black">Montant</label>
+                <input type="number" name="montant" id="montant" class="shadow-sm bg-brown-50 border border-emerald-600 text-brown-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-brown-700 dark:border-brown-600 dark:placeholder-brown-400 dark:text-black dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" placeholder="100" required>
+            </div>
+            <div class="mb-5">
+            
+            <button type="submit" class="text-white bg-emerald-700 hover:bg-emerald-800 focus:ring-4 focus:outline-none focus:ring-emerald-300 font-mono font-black rounded-lg text-sm px-5 py-2.5 text-center dark:bg-emerald-600 dark:hover:bg-emerald-700 dark:focus:ring-emerald-800 float-right">Register new account
+
+            </button>
+        </form>
+  
+    </div>
+    {% endblock %} 

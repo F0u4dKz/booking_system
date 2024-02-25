@@ -1,0 +1,11 @@
+{%extends "template.html" %} 
+
+{%block content%} 
+
+    <div class="container grid p-9 mx-auto place-items-center">
+        <img class="h-24 max-w-full my-8" src="{{ url_for('static', filename='images/subtract.png') }}" alt="image description">
+        <h3 class="font-mono font-bold text-red-700 text-lg text-center m-1">RESERVATION NON VALIDE</h3>
+        <h5 class="font-mono font-medium text-red-800 text-sm text-center m-1">{{ data.client_name }}</h5>
+        <h6 class="font-mono font-medium text-red-500 text-s text-center m-1">{{ data.active_from }} - {{ data.active_to }}<br> {{ data.balance }} Jours </h6>
+    </div>
+{% endblock %}  

@@ -1,0 +1,11 @@
+*.pyc
+*.ps1
+playground.ipynb
+package-lock.json
+package.json
+node_modules
+__pycache__
+flask_app/app/static/booking_pass/*.pdf
+flask_app/app/static/booking_pass/*.png
+flask_app/instance
+ourspace-venv

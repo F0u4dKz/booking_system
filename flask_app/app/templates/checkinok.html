@@ -1,0 +1,21 @@
+{%extends "template.html" %} 
+
+{%block content%} 
+
+    <div class=" w-screen mx-auto bg-emerald-500 px-5 h-52">
+        <div class=" mx-auto py-3">
+            <img class="h-9 max-w-full float-left" src="static/images/logo.png" alt="image description">
+            <img class="h-9 max-w-full float-right" src="static/images/avatar.png" alt="image description">
+            
+        </div>
+        <h3 class="font-black font-mono text-4xl text-white mt-28">BONJOUR TARIK,</h3>
+        
+    </div>
+    <div class="container grid p-9 mx-auto place-items-center">
+        <img class="h-24 max-w-full my-8" src="{{ url_for('static', filename='images/check.png') }}" alt="image description">
+        <h3 class="font-mono font-bold text-emerald-700 text-lg text-center m-1">RESERVATION VALIDE</h3>
+        <h4 class="font-mono font-medium text-green-800 text-sm text-center m-1">{{ data.client_name }}</h4>
+        <h5 class="font-mono font-medium text-emerald-500 text-s text-center m-1">{{ data.active_from }} - {{ data.active_to }}<br> {{ data.balance }} Jours </h5>
+        <h6 class="font-mono font-back text-emerald-700 text-s text-center m-1"> CHECKIN DONE </h6>
+    </div>
+    {% endblock %}  
