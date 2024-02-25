@@ -65,7 +65,7 @@ def send_payment():
 
     data = get_booking_data(raw_booking_id, clients_ids)
 
-    generate_qr_code(raw_booking_id, 'http://192.168.1.188:5000')
+    generate_qr_code(raw_booking_id, 'https://squid-app-crpgo.ondigitalocean.app/')
 
     data['code_qr_file'] = str(encode_b64(f'./app/static/booking_pass/{raw_booking_id}.png').decode('utf-8'))
 
