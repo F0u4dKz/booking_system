@@ -61,7 +61,7 @@ def prep_booking_base(client_data):
         booking_raw_ids = dict()
         for record in booking_data: 
             raw_record = record['fields']
-            client_id = raw_record['booking_id'][:1]
+            client_id = raw_record['booking_id'].split('_')[0]
             booking_id = raw_record['booking_id']
             booking_list.append(f'{booking_id} -- {client_data[int(client_id)]}')
             booking_raw_ids[record['id']] = raw_record['booking_id']
