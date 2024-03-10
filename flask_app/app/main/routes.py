@@ -46,6 +46,9 @@ def send_payment():
   
     
     data = request.form 
+
+    clients_ids, client_data, client_email = prep_client_base()
+    booking_ids, booking_list = prep_booking_base(client_data)
     
     client_id = get_key_by_value(client_data, data['client']) 
     raw_client_id = get_key_by_value(clients_ids, data['client']) 
